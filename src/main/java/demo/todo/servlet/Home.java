@@ -1,4 +1,4 @@
-package demo.servlet;
+package demo.todo.servlet;
 
 import java.io.IOException;
 
@@ -8,7 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import demo.constant.View;
-@WebServlet(urlPatterns="/home")
+import demo.servlet.BaseServlet;
+@WebServlet(urlPatterns="/todo/home")
 public class Home extends BaseServlet{
 
 	/**
