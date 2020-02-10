@@ -7,6 +7,7 @@
 <title>Home</title>
 </head>
 <body>
-<h1>Home page</h1>
+<h1>Home page ${pageContext.request.contextPath}</h1>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/index.js"></script>
 </body>
 </html>

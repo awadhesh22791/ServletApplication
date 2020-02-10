@@ -23,11 +23,11 @@ public class Login extends BaseServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		boolean authorized=authorized(request);
 		if(authorized) {
-			response.sendRedirect("/home");
+			redirect(request,response,"/home");
 		}else {
 			request.getRequestDispatcher(View.loginPage).forward(request, response);
 		}
-	}	
+	}
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -38,7 +38,7 @@ public class Login extends BaseServlet {
 		}else if(username.equalsIgnoreCase("demo") && password.equalsIgnoreCase("demo")) {
 			HttpSession session=request.getSession(true);
 			session.setAttribute(Field.AUTHORIZE, true);
-			response.sendRedirect("/home");
+			redirect(request,response,"/home");
 		}else {
 			request.getRequestDispatcher(View.loginPage).forward(request, response);
 		}
